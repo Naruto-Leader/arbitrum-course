@@ -14,14 +14,14 @@ contract Election {
     }
 
     mapping(address => bool) public hasVoted;
-    Candidate[] public candidates;
-
+    Candidate[] public candidates;    
+    
     modifier validCandidate(uint256 candidateId) {
         if (candidateId >= candidates.length) {
             revert InvalidCandidate();
         }
         _;
-    }
+    }   
 
     modifier notVoted() {
         if (hasVoted[msg.sender]) {
