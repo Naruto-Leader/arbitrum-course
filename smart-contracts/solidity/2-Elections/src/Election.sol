@@ -65,7 +65,7 @@ contract Election {
         candidates.push(candidate);
 
         emit CandidateAdded(candidates.length - 1, name);
-    }
+    }                  
 
     function winner() external view returns (uint256, string memory) {
         uint256 maxVote = 0;
